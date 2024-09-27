@@ -1,18 +1,28 @@
+import React from "react";
+import { motion } from 'framer-motion';
+import ProtectedRoute from "@/Components/ProtectedRoute";
+import { Button } from "@/Components/ui/button";
 import Link from "next/link";
-import {Button} from "@/Components/ui/button"
 
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
+    <motion.div 
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 1 }}
+    transition={{ duration: 2 }}
+  >
+    <ProtectedRoute>
+      <h1>Bienvenido a la Página Principal</h1>
       <Button>
-      <Link href="/login" className="text-white p-10">
-          Ir a Login
-        </Link>
+        <Link href='/Compras'>Compras</Link>
       </Button>
+    </ProtectedRoute>
+  </motion.div>
 
 
-    </div>
+
       
   );
 }
