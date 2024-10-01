@@ -19,7 +19,7 @@ export default function Home() {
     <ProtectedRoute>
       <div className="min-h-screen flex flex-col">
         <header className="bg-primary text-primary-foreground p-4">
-            <Navbar />
+            <Navbar Titulo='Nombre de la Empresa'/>
         </header>
 
         <main className="flex-grow container mx-auto p-4  md:flex-row">
