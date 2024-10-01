@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from 'react'
 import { motion } from 'framer-motion';
-import ProtectedRoute from "@/Components/ProtectedRoute";
-import { Button } from "@/Components/ui/button";
-import Link from "next/link";
+import ProtectedRoute from '@/Components/ProtectedRoute';
+import Navbar from '@/Components/Header/Navbar';
+import Main_Home from '@/Feature/Home/Main_Home';
+import Footer from '@/Components/Header/Footer'
+
 
 
 export default function Home() {
+
   return (
     <motion.div 
     initial={{ opacity: 0 }}
@@ -14,10 +17,17 @@ export default function Home() {
     transition={{ duration: 2 }}
   >
     <ProtectedRoute>
-      <h1>Bienvenido a la Página Principal</h1>
-      <Button>
-        <Link href='/Compras'>Compras</Link>
-      </Button>
+      <div className="min-h-screen flex flex-col">
+        <header className="bg-primary text-primary-foreground p-4">
+            <Navbar />
+        </header>
+
+        <main className="flex-grow container mx-auto p-4  md:flex-row">
+          <Main_Home/>
+        </main>
+
+        <Footer />
+      </div>
     </ProtectedRoute>
   </motion.div>
 

@@ -43,7 +43,7 @@ const LoginForm: React.FC = () => {
       if (username === testCredentials.username && password === testCredentials.password) {
         console.log("Login successful");
         dispatch(login()); 
-        router.push("/"); 
+        router.push("/login/SelectedCompany"); 
       } else {
         alert("Credenciales incorrectas."); 
       }
